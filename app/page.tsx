@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDown, Camera, Download, LockKeyhole, MessageCircle } from "lucide-react";
 import { PublicHeader } from "@/components/public-header";
 import { WhatsAppForm } from "@/components/whatsapp-form";
@@ -8,6 +9,16 @@ export default function HomePage() {
     <main>
       <section className="hero">
         <PublicHeader />
+        <div className="hero-photo" aria-hidden="true">
+          <Image
+            src="/photos/jmr-atardecer-02.jpg"
+            alt=""
+            fill
+            priority
+            quality={95}
+            sizes="(max-width: 780px) 100vw, 62vw"
+          />
+        </div>
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-frame" aria-hidden="true"><span /><span /><span /></div>
         <div className="hero-content">
@@ -29,10 +40,19 @@ export default function HomePage() {
       </section>
 
       <section className="portfolio-placeholder" aria-label="Portfolio de JMR.PH">
-        <div className="photo-card photo-card-a"><span>Eventos</span></div>
-        <div className="photo-card photo-card-b"><span>Historias</span></div>
-        <div className="photo-card photo-card-c"><span>Deporte</span></div>
-        <p className="portfolio-note">Este espacio se completa exclusivamente con fotografías originales de JMR.PH.</p>
+        <div className="photo-card photo-card-a">
+          <Image src="/photos/jmr-casamiento-02.jpg" alt="Celebración de casamiento fotografiada por JMR.PH" fill quality={92} sizes="(max-width: 780px) 100vw, 42vw" />
+          <span>Eventos</span>
+        </div>
+        <div className="photo-card photo-card-b">
+          <Image src="/photos/jmr-atardecer-01.jpg" alt="Book al aire libre fotografiado por JMR.PH" fill quality={92} sizes="(max-width: 780px) 50vw, 29vw" />
+          <span>Retratos</span>
+        </div>
+        <div className="photo-card photo-card-c">
+          <Image src="/photos/jmr-casamiento-03.jpg" alt="Pareja disfrutando su casamiento, fotografía de JMR.PH" fill quality={92} sizes="(max-width: 780px) 50vw, 29vw" />
+          <span>Historias</span>
+        </div>
+        <p className="portfolio-note">Fotografías originales de JMR.PH · <a href="https://www.instagram.com/jmr.ph/" target="_blank" rel="noreferrer">Ver Instagram ↗</a></p>
       </section>
 
       <section className="services" id="servicios">
